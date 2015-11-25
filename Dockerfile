@@ -40,11 +40,5 @@ RUN cd /tmp/pymods && \
 RUN cd /tmp/pymods && \
     git clone https://github.com/haddocking/disvis.git && \
     cd disvis && \
-    python setup.py install && \
-    echo "/usr/local/lib64">> /etc/ld.so.conf.d/libc.conf && \
-    ldconfig
+    python setup.py install
 
-RUN echo "/usr/local/lib64">> /etc/ld.so.conf.d/lib64.conf && \
-    ldconfig
-
-ENV LD_LIBRARY_PATH=/usr/local/lib64
